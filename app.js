@@ -14,8 +14,14 @@ app.get('/',(req,res)=>{
 //routes middlware file 
 const userRoutes = require('./routes//userRoutes')
 
+//user routes middlware file
+const questionRoutes = require('./routes/questionRoutes')
 
 app.use("/api/users",userRoutes)
+
+// question routes middlware 
+app.use("/api/questions",questionRoutes)
+
 
 async function start() {
     try {
