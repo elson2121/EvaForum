@@ -24,3 +24,27 @@ DB_PASSWORD=...
 DB_HOST=...
 DB_DATABASE=...
 JWT_SECRET=YOUR_VERY_SECURE_SECRET_KEY
+Running the Server
+Start the application using nodemon (if installed as a dev dependency) for development, or node for production:
+
+# For development (with nodemon)
+npm start 
+
+# OR (if you use node directly)
+node server.js
+
+The server will start at http://localhost:5000 (or the port defined in your .env file).
+
+📁 Project Structure
+The application follows a modular structure to separate concerns:
+
+├── Controller/
+│   └── userController.js  # Contains core business logic (e.g., getSingleQuestion) and handles DB interaction.
+├── db/
+│   └── dbconfig.js        # Manages the robust MySQL connection pool and exports the promise-based connection.
+├── middleware/
+│   └── authMiddleware.js  # Handles JWT authentication and verifies user access to protected routes.
+├── Routes/
+│   └── userRoutes.js      # Defines the structure of API endpoints and links them to Controller functions.
+├── .env                   # Configuration file (ignored by Git for security).
+└── server.js              # The application entry point, sets up middleware, loads routes, and starts the server.
