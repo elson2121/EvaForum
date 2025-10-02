@@ -48,3 +48,43 @@ The application follows a modular structure to separate concerns:
 │   └── userRoutes.js      # Defines the structure of API endpoints and links them to Controller functions.
 ├── .env                   # Configuration file (ignored by Git for security).
 └── server.js              # The application entry point, sets up middleware, loads routes, and starts the server.
+Available Endpoints
+Method
+
+Path
+
+Description
+
+Access
+
+Status
+
+GET
+
+/api/question/:question_id
+
+Retrieves details for a specific question.
+
+Protected (Requires JWT)
+
+Implemented
+
+POST
+
+/api/users/register
+
+User registration (Placeholder)
+
+Public
+
+Placeholder
+
+POST
+
+/api/users/login
+
+User login (Placeholder)
+
+Public
+
+Placeholder
