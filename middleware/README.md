@@ -8,4 +8,19 @@ Node.js (v18+)
 
 MySQL Database Server
 
-The project dependencies (installed via npm install)
+The project dependencies (installed via npm install)  
+Installation & Setup
+Clone the repository.
+
+Install dependencies:
+
+npm install
+
+Configure Environment Variables: Create a file named .env in the root directory and populate it with your configuration:
+
+PORT=5000
+DB_USER=...
+DB_PASSWORD=...
+DB_HOST=...
+DB_DATABASE=...
+JWT_SECRET=YOUR_VERY_SECURE_SECRET_KEY
