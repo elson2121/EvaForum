@@ -1,7 +1,9 @@
+require("dotenv").config()
 const express=require('express')
 const app=express();
 const port =3000
-
+const cors=require('cors')
+app.use(cors())
 //db connection 
 const dbconnection=require('./db/dbcofig')
 //json middlware to extract the data 
@@ -12,17 +14,19 @@ app.get('/',(req,res)=>{
 });
 
 //routes middlware file 
-const userRoutes = require('./routes//userRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 //user routes middlware file
+ 
 const questionRoutes = require('./routes/questionRoutes')
-
+//use routes for the single middlware 
+const singlequestion=require('./routes/singlequestion')
 app.use("/api/users",userRoutes)
 
 // question routes middlware 
 app.use("/api/questions",questionRoutes)
 
-
+app.use("/api/questions/single",singlequestion)
 async function start() {
     try {
         // Test database connection before starting the server

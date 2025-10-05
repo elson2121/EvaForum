@@ -1,4 +1,6 @@
 import axios from 'axios' 
-export const axiosBase = axios.create({
-    baseURL:'hppt://localhost:3000/api'
+ const axiosBase = axios.create({
+    baseURL:'http://localhost:3000/api/users'
 })
+
+export default axiosBase; 

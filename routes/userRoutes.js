@@ -16,4 +16,8 @@ router.post('/login',login)
 //check user 
 //register route
 router.get('/check', authMiddleware, checkuser)  
+
+// router.get('/all-question',authMiddleware,getAllQuestions)
+// router.get('/single-question',authMiddleware,getSingleQuestion)
+
 module.exports=router

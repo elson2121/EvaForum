@@ -1,11 +1,13 @@
+require("dotenv").config()
 const mysql2=require('mysql2') 
 const dbconnection = mysql2.createPool({
-    user: 'sadam',
-    database:'formdb',
-    host:'localhost',
-    password:'12345678',
-    connectionLimit:10 
+    user:process.env.userN,
+    database:process.env.databaseDB,
+    host:process.env.hostslocal,
+    password:process.env.passwordDB,
+    connectionLimit:process.env.connectionLLimit
 })
+console.log(process.env.JWT_SECRET);
 // dbconnection.execute("select 'test' ", (err,results)=>{
 // if (err){
 // console.log(err.message);

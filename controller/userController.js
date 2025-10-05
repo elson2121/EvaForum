@@ -54,8 +54,8 @@ if(!isMatch){
 const username=user[0].username;
 const userid =user[0].userid;
 //payluod
-const token=jsw.sign({username,userid},"secret",{expiresIn:"1day"})
-return res.status(StatusCodes.OK).json({msg:"user login suceccessfuly", token});
+const token=jsw.sign({username,userid},process.env.JWT_SECRET,{expiresIn:"1day"})
+return res.status(StatusCodes.OK).json({msg:"user login suceccessfuly", token,username});
  
     
 } catch (error) {
@@ -68,9 +68,31 @@ return res.status(StatusCodes.OK).json({msg:"user login suceccessfuly", token});
 
 
 async function checkuser(req,res){
-    const username=req.user.username;
-    const userid=req.user.userid;
+    const username=req.user.username
+    const userid=req.user.userid
     res.status(StatusCodes.OK).json({msg:"valid user",username,userid})
     // res.send('checkuser page')
 }
+// // Placeholder functions for all-question and single-question (to be implemented)
+// async function getAllQuestions(req, res) {
+//     try {
+//         res.send("all question");
+//     } catch (error) {
+//         console.error("Error in all-question:", error.message);
+//         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: "Something went wrong, try again later!" });
+//     }
+// }
+
+// async function getSingleQuestion(req, res) {
+//     try {
+//         res.send("single question");
+//     } catch (error) {
+//         console.error("Error in single-question:", error.message);
+//         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: "Something went wrong, try again later!" });
+//     }
+// }
+
+
+
+
 module.exports={register,login,checkuser}
